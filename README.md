@@ -10,7 +10,7 @@ Note: You can run the node without a GPU using CPU-only mode.
 ⚙️Installation of the Node:
 #### Step 1: Install Dependencies:
 ````bash
-wget -qO Dependencies.sh https://raw.githubusercontent.com/waults/gensyn/refs/heads/main/Dependencies.sh && chmod +x Dependencies.sh && ./Dependencies.sh`
+wget -qO Dependencies.sh https://raw.githubusercontent.com/waults/gensyn/refs/heads/main/Dependencies.sh && chmod +x Dependencies.sh && ./Dependencies.sh
 ````
 Execute the below command:
 ````bash
