@@ -31,11 +31,11 @@ cd $HOME && rm -rf https://raw.githubusercontent.com/waults/gensyn/refs/heads/ma
 ````
 ![image](https://github.com/user-attachments/assets/30a216a5-bde6-4570-8808-bd2809a2f815)
 
-- # Official doc guide to select the parameters: https://github.com/gensyn-ai/rl-swarm
-- # For GPU → Big model (7B, 32B or 72B) + Math Hard (DAPO-Math 17K dataset)
+- #### Official doc guide to select the parameters: https://github.com/gensyn-ai/rl-swarm
+- #### For GPU → Big model (7B, 32B or 72B) + Math Hard (DAPO-Math 17K dataset)
 Required: A100 (80GB) or H100 (80GB)
 Optional GPU (for small models) → Qwen 0.5B or 1.5B + GSM8K
-- # Suggested: Any GPU with >8GB vRAM (e.g., RTX 3090, 4090, A100, H100)
+- #### Suggested: Any GPU with >8GB vRAM (e.g., RTX 3090, 4090, A100, H100)
 The script will install some Python packages. If prompted for Hugging Face credentials, type ’N’ to skip.
 
 #### Step 5: Login:
