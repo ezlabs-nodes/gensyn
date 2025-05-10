@@ -67,5 +67,5 @@ You can search your Node name in the dashboard after a while when you have done 
 ![image](https://github.com/user-attachments/assets/bbade9b6-5cc9-4d10-abca-e5d600acbcf2)
 
 - Backup your Userdata & API Key:
-  `cat ~/rl-swarm/modal-login/temp-data/userData.json`
-  `cat ~/rl-swarm/modal-login/temp-data/userApiKey.json`
+  ````bash
+  cat ~/rl-swarm/modal-login/temp-data/userData.json && cat ~/rl-swarm/modal-login/temp-data/userApiKey.json
