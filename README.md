@@ -31,11 +31,11 @@ cd $HOME && rm -rf https://raw.githubusercontent.com/waults/gensyn/refs/heads/ma
 ````
 ![image](https://github.com/user-attachments/assets/30a216a5-bde6-4570-8808-bd2809a2f815)
 
-- Official doc guide to select the parameters: https://github.com/gensyn-ai/rl-swarm
-- For GPU → Big model (7B, 32B or 72B) + Math Hard (DAPO-Math 17K dataset)
+- #### Official doc guide to select the parameters: https://github.com/gensyn-ai/rl-swarm
+- #### For GPU → Big model (7B, 32B or 72B) + Math Hard (DAPO-Math 17K dataset)
 Required: A100 (80GB) or H100 (80GB)
 Optional GPU (for small models) → Qwen 0.5B or 1.5B + GSM8K
-- Suggested: Any GPU with >8GB vRAM (e.g., RTX 3090, 4090, A100, H100)
+- ### Suggested: Any GPU with >8GB vRAM (e.g., RTX 3090, 4090, A100, H100)
 The script will install some Python packages. If prompted for Hugging Face credentials, type ’N’ to skip.
 
 #### Step 6: Login:
@@ -50,22 +50,22 @@ Now, it will print the website URL as shown in the screenshot. Just open it, use
 - #### After that, the script will prompt you to enter your Hugging Face credentials. Type’N’ as shown in the screenshot below.
 ![image](https://github.com/user-attachments/assets/7bd322df-aab9-4182-b1a4-374363c88f11)
 
-- If you see this , Done for run and go to home screen your VPS `CTRL+A+D`
+- #### If you see this , Done for run and go to home screen your VPS `CTRL+A+D`
 ![image](https://github.com/user-attachments/assets/47023a16-191f-480c-8651-48d552931b1d)
 
-Check your Log:
+#### Check your Log:
 If you want to view your log, just reattach to the screen using the command below.
 
 `screen -r gensyn`
 
-- Check Wins: @gensyntrackbot on telegram
+- #### Check Wins: @gensyntrackbot on telegram
 Enter your Peer-ID, you will find that in your log
 
-- Official dashboard: https://dashboard.gensyn.ai/
+- #### Official dashboard: https://dashboard.gensyn.ai/
 
 You can search your Node name in the dashboard after a while when you have done your first training completed
 ![image](https://github.com/user-attachments/assets/bbade9b6-5cc9-4d10-abca-e5d600acbcf2)
 
-- Backup your Userdata & API Key:
+- #### Backup your Userdata & API Key:
   ````bash
   cat ~/rl-swarm/modal-login/temp-data/userData.json && cat ~/rl-swarm/modal-login/temp-data/userApiKey.json
