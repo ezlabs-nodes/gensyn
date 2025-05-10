@@ -25,7 +25,7 @@ Open a screen to run it in the background
 ````bash
 screen -S genysyn
 ````
-#### Step 5: Clone the Repo & execute the rlswarm.sh:
+#### Step 4: Clone the Repo & execute the rlswarm.sh:
 ````bash
 cd $HOME && rm -rf https://raw.githubusercontent.com/waults/gensyn/refs/heads/main/rlswarm.sh && chmod +x rlswarm.sh && ./rlswarm.sh
 ````
@@ -38,7 +38,7 @@ Optional GPU (for small models) → Qwen 0.5B or 1.5B + GSM8K
 - ### Suggested: Any GPU with >8GB vRAM (e.g., RTX 3090, 4090, A100, H100)
 The script will install some Python packages. If prompted for Hugging Face credentials, type ’N’ to skip.
 
-#### Step 6: Login:
+#### Step 5: Login:
 Now, it will print the website URL as shown in the screenshot. Just open it, use the password displayed in the terminal, enter the password, and submit.
 ![image](https://github.com/user-attachments/assets/6571863c-0fd5-48e0-a86d-5a49f65a4e71)
 
