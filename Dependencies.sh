@@ -67,41 +67,6 @@ if ! command -v git &>/dev/null; then
 else
     echo -e "${INFO}git already installed.${NC}"
 fi
-
-# Install Docker
-if ! command -v docker &>/dev/null; then
-    echo -e "${YELLOW}Installing Docker...${NC}"
-    sudo apt install -y apt-transport-https ca-certificates curl software-properties-common lsb-release gnupg2
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt update -y
-    sudo apt install -y docker-ce docker-ce-cli containerd.io
-    echo -e "${GREEN}Docker installation completed.${NC}"
-else
-    echo -e "${YELLOW}Docker already installed.${NC}"
-fi
-
-# Install Docker Compose
-if ! command -v docker-compose &>/dev/null; then
-    echo -e "${YELLOW}Installing Docker Compose...${NC}"
-    VER=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep tag_name | cut -d '"' -f 4)
-    sudo curl -L "https://github.com/docker/compose/releases/download/$VER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
-    echo -e "${GREEN}Docker Compose installed.${NC}"
-else
-    echo -e "${YELLOW}Docker Compose already installed.${NC}"
-fi
-
-# Add current user to Docker group
-if ! groups $USER | grep -q '\bdocker\b'; then
-    echo -e "${YELLOW}Adding user to Docker group...${NC}"
-    sudo groupadd docker 2>/dev/null
-    sudo usermod -aG docker $USER
-    echo -e "${GREEN}User added to Docker group. You may need to logout and login again.${NC}"
-else
-    echo -e "${GREEN}User is already in the Docker group.${NC}"
-fi
-
 # Check for existing Node.js installations
 EXISTING_NODE=$(which node)
 if [ -n "$EXISTING_NODE" ]; then
