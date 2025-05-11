@@ -10,7 +10,7 @@ Note: You can run the node without a GPU using CPU-only mode.
 ⚙️Installation of the Node:
 #### Step 1: Install Dependencies:
 ````bash
-wget -qO Dependencies.sh https://raw.githubusercontent.com/waults/gensyn/refs/heads/main/Dependencies.sh && chmod +x Dependencies.sh && ./Dependencies.sh
+wget -qO gensyndepedencies.sh https://raw.githubusercontent.com/waults/gensyn/refs/heads/main/gensyndepedencies.sh && chmod +x gensyndepedencies.sh && ./gensyndepedencies.sh
 ````
 Execute the below command:
 ````bash
@@ -23,7 +23,7 @@ screen -S genysyn
 ````
 #### Step 3: Clone the Repo & execute the rlswarm.sh:
 ````bash
-cd $HOME && rm -rf https://raw.githubusercontent.com/waults/gensyn/refs/heads/main/rlswarm.sh && chmod +x rlswarm.sh && ./rlswarm.sh
+cd $HOME && rm -rf rlswarm.sh && wget https://raw.githubusercontent.com/waults/gensyn/refs/heads/main/rlswarm.sh && chmod +x rlswarm.sh && ./rlswarm.sh
 ````
 ![image](https://github.com/user-attachments/assets/30a216a5-bde6-4570-8808-bd2809a2f815)
 
