@@ -67,31 +67,30 @@ if ! command -v git &>/dev/null; then
 else
     echo -e "${INFO}git already installed.${NC}"
 fi
-# Check for existing Node.js installations
-EXISTING_NODE=$(which node)
-if [ -n "$EXISTING_NODE" ]; then
-    show "Existing Node.js found at $EXISTING_NODE. The script will install the latest version system-wide."
+
+# Install Node.js
+if ! command -v git &>/dev/null; then
+    echo -e "${INFO}Installing Nodejs...${NC}"
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+else
+    echo -e "${INFO}Nodejs already installed.${NC}"
 fi
 
-# Fetch the latest Node.js version dynamically
-show "Fetching latest Node.js version..." "progress"
-LATEST_VERSION=$(curl -s https://nodejs.org/dist/latest/ | grep -oP 'node-v\K\d+\.\d+\.\d+' | head -1)
-if [ -z "$LATEST_VERSION" ]; then
-    show "Failed to fetch latest Node.js version. Please check your internet connection." "error"
-    exit 1
+if ! command -v git &>/dev/null; then
+    echo -e "${INFO}Installing Nodejs...${NC}"
+    sudo apt install -y nodejs
+else
+    echo -e "${INFO}Nodejs already installed.${NC}"
 fi
-show "Latest Node.js version is $LATEST_VERSION"
 
-# Extract the major version for NodeSource setup
-MAJOR_VERSION=$(echo $LATEST_VERSION | cut -d. -f1)
-
-# Install Node.js and npm
-show "Installing Node.js and npm..." "progress"
-sudo apt-get install -y nodejs
-if [ $? -ne 0 ]; then
-    show "Failed to install Node.js and npm." "error"
-    exit 1
+# InstalL depedendcies
+if ! command -v git &>/dev/null; then
+    echo -e "${INFO}Installing Depedencies...${NC}"
+    sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl screen git yarn && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && sudo apt update && sudo apt install -y yarn
+else
+    echo -e "${INFO}Depedencies already installed.${NC}"
 fi
+
 echo "==================================="
 echo -e "${BANNER}           EZ Labs Nodes       ${NC}"
 echo "==================================="
