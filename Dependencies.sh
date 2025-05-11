@@ -231,6 +231,15 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-mod
 # Source the environment immediately
 source "$CARGO_HOME/env"
 
+# Install Node.js and npm
+show "Installing Node.js and npm..." "progress"
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+if [ $? -ne 0 ]; then
+    show "Failed to install Node.js and npm." "error"
+    exit 1
+fi
+
 # ==========================================
 # Final Configuration
 # ==========================================
