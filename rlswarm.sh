@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 BOLD="\e[1m"
@@ -8,6 +9,11 @@ CYAN="\e[36m"
 MAGENTA="\e[35m"
 NC="\e[0m"
 
+# Display social details and channel information in large letters manually
+echo "========================================"
+echo -e "${YELLOW} Script is made by EZ-LABS${NC}"
+echo -e "-------------------------------------"
+
 # Print EZ LABS ASCII art
 echo -e "${BLUE}"
 echo -e " ███████╗███████╗     ██╗      █████╗ ██████╗ ███████╗"
@@ -17,6 +23,18 @@ echo -e " ██╔══╝   ███╔╝ ╚════╝██║     �
 echo -e " ███████╗███████╗     ███████╗██║  ██║██████╔╝███████║"
 echo -e " ╚══════╝╚══════╝     ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝"
 echo -e "${NC}"
+
+# Print decorative border
+echo -e "${PURPLE}╭───────────────────────────────────────────────────────╮${NC}"
+
+# Print tagline with color effects
+echo -e "${CYAN}│  ${YELLOW}⚡ ${WHITE}S i m p l i f y i n g   D e v e l o p m e n t ${YELLOW}⚡  ${CYAN}│${NC}"
+
+# Print bottom border
+echo -e "${PURPLE}╰───────────────────────────────────────────────────────╯${NC}"
+
+# Print additional info
+echo -e "\n${GREEN}🚀 Node.js Tools  •  ${RED}Linux Automation  •  ${BLUE}Cloud Solutions${NC}\n"
 
 echo -e "${YELLOW}Telegram: ${GREEN}https://t.me/EzLabsNodes${NC}"
 echo -e "${YELLOW}Twitter: ${GREEN}@EzlabsNodes${NC}"
