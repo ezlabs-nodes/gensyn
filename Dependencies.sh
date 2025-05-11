@@ -127,25 +127,6 @@ if [ $? -ne 0 ]; then
     show "Failed to install Node.js and npm." "error"
     exit 1
 fi
-
-# Verify installation and PATH availability
-show "Verifying installation..." "progress"
-if command -v node &> /dev/null && command -v npm &> /dev/null; then
-    NODE_VERSION=$(node -v)
-    NPM_VERSION=$(npm -v)
-    INSTALLED_NODE=$(which node)
-    if [ "$INSTALLED_NODE" = "/usr/bin/node" ]; then
-        show "Node.js $NODE_VERSION and npm $NPM_VERSION installed successfully at /usr/bin."
-    else
-        show "Node.js $NODE_VERSION and npm $NPM_VERSION installed, but another node executable is in PATH at $INSTALLED_NODE."
-        show "The system-wide installation is at /usr/bin/node. To prioritize it, ensure /usr/bin is before other paths in your PATH variable."
-    fi
-else
-    show "Installation completed, but node or npm not found in PATH." "error"
-    show "This is unusual as /usr/bin should be in PATH. Please ensure /usr/bin is in your PATH variable (e.g., export PATH=/usr/bin:$PATH) and restart your shell."
-    exit 1
-fi
-
 echo "==================================="
 echo -e "${BANNER}           EZ Labs Nodes       ${NC}"
 echo "==================================="
