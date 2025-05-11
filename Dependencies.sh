@@ -1,76 +1,95 @@
 #!/bin/bash
 
-# Define color codes
-INFO='\033[0;36m'   # Cyan
-BANNER='\033[0;35m' # Magenta
-YELLOW='\033[0;33m' # Yellow
-RED='\033[0;31m'    # Red
-GREEN='\033[0;32m'  # Green
-BLUE='\033[0;34m'   # Blue
-NC='\033[0m'        # No Color
+# ==========================================
+# Color Definitions
+# ==========================================
+# Standard colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[1;37m'
+NC='\033[0m' # No Color
 
-# Display social details and channel information in large letters manually
-echo "========================================"
-echo -e "${YELLOW} Script is made by EZ-LABS${NC}"
-echo -e "-------------------------------------"
-
-# Print EZ LABS ASCII art
-echo -e "${BLUE}"
-echo -e " ███████╗███████╗     ██╗      █████╗ ██████╗ ███████╗"
-echo -e " ██╔════╝╚══███╔╝     ██║     ██╔══██╗██╔══██╗██╔════╝"
-echo -e " █████╗    ███╔╝█████╗██║     ███████║██████╔╝███████╗"
-echo -e " ██╔══╝   ███╔╝ ╚════╝██║     ██╔══██║██╔══██╗╚════██║"
-echo -e " ███████╗███████╗     ███████╗██║  ██║██████╔╝███████║"
-echo -e " ╚══════╝╚══════╝     ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝"
-echo -e "${NC}"
-
-# Print decorative border
-echo -e "${PURPLE}╭───────────────────────────────────────────────────────╮${NC}"
-
-# Print tagline with color effects
-echo -e "${CYAN}│  ${YELLOW}⚡ ${WHITE}S i m p l i f y i n g   D e v e l o p m e n t ${YELLOW}⚡  ${CYAN}│${NC}"
-
-# Print bottom border
-echo -e "${PURPLE}╰───────────────────────────────────────────────────────╯${NC}"
-
-# Print additional info
-echo -e "\n${GREEN}🚀 Node.js Tools  •  ${RED}Linux Automation  •  ${BLUE}Cloud Solutions${NC}\n"
-
-echo -e "${YELLOW}Telegram: ${GREEN}https://t.me/EzLabsNodes${NC}"
-echo -e "${YELLOW}Twitter: ${GREEN}@EzlabsNodes${NC}"
-echo "======================================================="
-
-#!/bin/bash
-set -euo pipefail  # More strict error handling
+# Bold colors
+BOLD_RED='\033[1;31m'
+BOLD_GREEN='\033[1;32m'
+BOLD_YELLOW='\033[1;33m'
+BOLD_BLUE='\033[1;34m'
+BOLD_PURPLE='\033[1;35m'
+BOLD_CYAN='\033[1;36m'
+BOLD_WHITE='\033[1;37m'
 
 # ==========================================
+# Banner Display
+# ==========================================
+function display_banner() {
+    echo "========================================"
+    echo -e "${YELLOW} Script is made by EZ-LABS${NC}"
+    echo -e "-------------------------------------"
+
+    echo -e "${BLUE}"
+    echo -e " ███████╗███████╗     ██╗      █████╗ ██████╗ ███████╗"
+    echo -e " ██╔════╝╚══███╔╝     ██║     ██╔══██╗██╔══██╗██╔════╝"
+    echo -e " █████╗    ███╔╝█████╗██║     ███████║██████╔╝███████╗"
+    echo -e " ██╔══╝   ███╔╝ ╚════╝██║     ██╔══██║██╔══██╗╚════██║"
+    echo -e " ███████╗███████╗     ███████╗██║  ██║██████╔╝███████║"
+    echo -e " ╚══════╝╚══════╝     ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝"
+    echo -e "${NC}"
+
+    echo -e "${PURPLE}╭───────────────────────────────────────────────────────╮${NC}"
+    echo -e "${CYAN}│  ${YELLOW}⚡ ${WHITE}S i m p l i f y i n g   D e v e l o p m e n t ${YELLOW}⚡  ${CYAN}│${NC}"
+    echo -e "${PURPLE}╰───────────────────────────────────────────────────────╯${NC}"
+
+    echo -e "\n${GREEN}🚀 Node.js Tools  •  ${RED}Linux Automation  •  ${BLUE}Cloud Solutions${NC}\n"
+
+    echo -e "${YELLOW}Telegram: ${GREEN}https://t.me/EzLabsNodes${NC}"
+    echo -e "${YELLOW}Twitter: ${GREEN}@EzlabsNodes${NC}"
+    echo "======================================================="
+}
+
+# ==========================================
+# Main Script
+# ==========================================
+set -euo pipefail  # Strict error handling
+
 # Configuration Variables
-# ==========================================
 GO_VERSION="1.24.2"
 GO_ARCH="linux-amd64"
 DOCKER_COMPOSE_VERSION="v2.20.2"
-USERNAME=$(whoami)  # Get current username
+USERNAME=$(whoami)
 
 # ==========================================
 # Utility Functions
 # ==========================================
 function info() {
-    echo -e "\033[1;32m[INFO] $1\033[0m"
+    echo -e "${BOLD_CYAN}[INFO] ${1}${NC}"
 }
 
 function warn() {
-    echo -e "\033[1;33m[WARN] $1\033[0m"
+    echo -e "${BOLD_YELLOW}[WARN] ${1}${NC}"
 }
 
 function error() {
-    echo -e "\033[1;31m[ERROR] $1\033[0m" >&2
+    echo -e "${BOLD_RED}[ERROR] ${1}${NC}" >&2
     exit 1
+}
+
+function success() {
+    echo -e "${BOLD_GREEN}[SUCCESS] ${1}${NC}"
 }
 
 function install_packages() {
     info "Installing packages: $*"
     sudo apt install -y "$@"
 }
+
+# ==========================================
+# Display Banner
+# ==========================================
+display_banner
 
 # ==========================================
 # System Update
@@ -85,9 +104,34 @@ info "Installing essential build tools..."
 install_packages \
     git clang cmake build-essential openssl pkg-config libssl-dev \
     wget htop tmux jq make gcc tar ncdu protobuf-compiler \
-    npm nodejs default-jdk aptitude squid apache2-utils \
+    npm default-jdk aptitude squid apache2-utils \
     iptables iptables-persistent openssh-server sed lz4 aria2 pv \
     python3 python3-venv python3-pip screen snapd flatpak lsof
+
+# ==========================================
+# Node.js Installation (Fixed)
+# ==========================================
+info "Setting up Node.js..."
+
+# Remove existing Node.js if installed via apt
+sudo apt remove --purge nodejs npm -y 2>/dev/null || true
+sudo rm -rf /usr/local/lib/node_modules
+sudo rm -rf /usr/local/include/node
+
+# Install Node.js 18.x (LTS)
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+install_packages nodejs
+
+# Verify installation
+NODE_VERSION=$(node --version)
+NPM_VERSION=$(npm --version)
+success "Installed Node.js ${NODE_VERSION} and npm ${NPM_VERSION}"
+
+# Install Yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+install_packages yarn
 
 # ==========================================
 # Docker Installation
@@ -143,12 +187,6 @@ sudo add-apt-repository ppa:openjdk-r/ppa -y
 sudo apt update
 install_packages openjdk-11-jdk
 
-# Yarn
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update
-install_packages yarn
-
 # ==========================================
 # Go Installation
 # ==========================================
@@ -167,7 +205,7 @@ if file "go${GO_VERSION}.${GO_ARCH}.tar.gz" | grep -q "gzip compressed data"; th
     if ! command -v go &> /dev/null; then
         error "Go installation failed"
     else
-        info "Go installed: $(go version)"
+        success "Go installed: $(go version)"
     fi
 else
     error "Invalid Go download"
@@ -207,68 +245,37 @@ fi
 # ==========================================
 # Completion Message
 # ==========================================
-# Check for existing Node.js installations
-EXISTING_NODE=$(which node)
-if [ -n "$EXISTING_NODE" ]; then
-    show "Existing Node.js found at $EXISTING_NODE. The script will install the latest version system-wide."
-fi
-
-# Fetch the latest Node.js version dynamically
-show "Fetching latest Node.js version..." "progress"
-LATEST_VERSION=$(curl -s https://nodejs.org/dist/latest/ | grep -oP 'node-v\K\d+\.\d+\.\d+' | head -1)
-if [ -z "$LATEST_VERSION" ]; then
-    show "Failed to fetch latest Node.js version. Please check your internet connection." "error"
-    exit 1
-fi
-show "Latest Node.js version is $LATEST_VERSION"
-
-# Extract the major version for NodeSource setup
-MAJOR_VERSION=$(echo $LATEST_VERSION | cut -d. -f1)
-
-# Set up the NodeSource repository for the latest major version
-show "Setting up NodeSource repository for Node.js $MAJOR_VERSION.x..." "progress"
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-if [ $? -ne 0 ]; then
-    show "Failed to set up NodeSource repository." "error"
-    exit 1
-fi
-
-# Install Node.js and npm
-show "Installing Node.js and npm..." "progress"
-sudo apt-get install -y nodejs
-if [ $? -ne 0 ]; then
-    show "Failed to install Node.js and npm." "error"
-    exit 1
-fi
-
 cat <<EOF
 
-================================================
+${BOLD_GREEN}================================================
 INSTALLATION COMPLETE!
 - System updated and essential packages installed
+- Node.js ${NODE_VERSION} and npm ${NPM_VERSION} installed
 - Docker and Docker Compose ${DOCKER_COMPOSE_VERSION} installed
-- Development tools (Go ${GO_VERSION}, Rust, Node.js, etc.) installed
+- Development tools (Go ${GO_VERSION}, Rust, etc.) installed
 - Visual Studio Code installed via Snap
 ================================================
 
 IMPORTANT NEXT STEPS:
 1. Run this command or restart your shell to apply changes:
-   source ~/.bashrc
+   ${BOLD_WHITE}source ~/.bashrc${BOLD_GREEN}
 
 2. Verify Rust installation:
-   rustc --version
-   cargo --version
+   ${BOLD_WHITE}rustc --version
+   cargo --version${BOLD_GREEN}
 
 3. For Docker to work without sudo, you may need to log out and back in.
 
 4. Verify Go installation:
-   go version
-5. Verify Node.js installation
-   nodejs --version
+   ${BOLD_WHITE}go version${BOLD_GREEN}
+
+5. Verify Node.js installation:
+   ${BOLD_WHITE}node --version
+   npm --version${BOLD_GREEN}
 EOF
 
 echo "==================================="
-echo -e "${BANNER}           EZ Labs Nodes       ${NC}"
+echo -e "${PURPLE}           EZ Labs Nodes       ${NC}"
 echo "==================================="
 echo -e "${GREEN}    Thanks for using this script!${NC}"
 echo "==================================="
