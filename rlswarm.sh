@@ -95,4 +95,4 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 echo -e "${BOLD}${YELLOW}[✓] Running rl-swarm...${NC}"
-./run_rl_swarm.sh
+chmod +x run_rl_swarm.sh && ./run_rl_swarm.sh
