@@ -258,20 +258,20 @@ INSTALLATION COMPLETE!
 
 IMPORTANT NEXT STEPS:
 1. Run this command or restart your shell to apply changes:
-   ${BOLD_WHITE}source ~/.bashrc${BOLD_GREEN}
+   source ~/.bashrc
 
 2. Verify Rust installation:
-   ${BOLD_WHITE}rustc --version
-   cargo --version${BOLD_GREEN}
+   rustc --version
+   cargo --version
 
 3. For Docker to work without sudo, you may need to log out and back in.
 
 4. Verify Go installation:
-   ${BOLD_WHITE}go version${BOLD_GREEN}
+   go version
 
 5. Verify Node.js installation:
-   ${BOLD_WHITE}node --version
-   npm --version${BOLD_GREEN}
+   node --version
+   npm --version
 EOF
 
 echo "==================================="
