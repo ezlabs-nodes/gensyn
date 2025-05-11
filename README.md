@@ -16,16 +16,12 @@ Execute the below command:
 ````bash
 source ~/.bashrc
 ````
-#### Step 2: Install the other dependencies:
-````bash
-sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof nano unzip
-````
-#### Step 3: Create a screen:
+#### Step 2: Create a screen:
 Open a screen to run it in the background
 ````bash
 screen -S genysyn
 ````
-#### Step 4: Clone the Repo & execute the rlswarm.sh:
+#### Step 3: Clone the Repo & execute the rlswarm.sh:
 ````bash
 cd $HOME && rm -rf https://raw.githubusercontent.com/waults/gensyn/refs/heads/main/rlswarm.sh && chmod +x rlswarm.sh && ./rlswarm.sh
 ````
@@ -38,7 +34,7 @@ Optional GPU (for small models) → Qwen 0.5B or 1.5B + GSM8K
 - #### Suggested: Any GPU with >8GB vRAM (e.g., RTX 3090, 4090, A100, H100)
 The script will install some Python packages. If prompted for Hugging Face credentials, type ’N’ to skip.
 
-#### Step 5: Login:
+#### Step 4: Login:
 Now, it will print the website URL as shown in the screenshot. Just open it, use the password displayed in the terminal, enter the password, and submit.
 ![image](https://github.com/user-attachments/assets/6571863c-0fd5-48e0-a86d-5a49f65a4e71)
 
