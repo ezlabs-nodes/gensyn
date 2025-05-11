@@ -45,7 +45,7 @@ function display_banner() {
     echo -e "${PURPLE}╰───────────────────────────────────────────────────────╯${NC}"
 
     echo -e "\n${GREEN}🚀 Node.js Tools  •  ${RED}Linux Automation  •  ${BLUE}Cloud Solutions${NC}\n"
-
+    echo -e "${YELLOW}Github: ${GREEN}https://github.com/ezlabs-nodes${NC}"
     echo -e "${YELLOW}Telegram: ${GREEN}https://t.me/EzLabsNodes${NC}"
     echo -e "${YELLOW}Twitter: ${GREEN}@EzlabsNodes${NC}"
     echo "======================================================="
