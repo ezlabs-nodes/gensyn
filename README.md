@@ -46,8 +46,9 @@ Now, it will print the website URL as shown in the screenshot. Just open it, use
 - #### After that, the script will prompt you to enter your Hugging Face credentials. Type’N’ as shown in the screenshot below.
 ![image](https://github.com/user-attachments/assets/7bd322df-aab9-4182-b1a4-374363c88f11)
 
-- #### If you see this , Done for run and go to home screen your VPS `CTRL+A+D`
+
 ![image](https://github.com/user-attachments/assets/47023a16-191f-480c-8651-48d552931b1d)
+- #### If you see this , Done for run and go to home screen your VPS `CTRL+A+D`
 
 #### Check your Log:
 If you want to view your log, just reattach to the screen using the command below.
