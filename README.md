@@ -14,7 +14,7 @@ wget -qO gensyndepedencies.sh https://raw.githubusercontent.com/ezlabs-nodes/gen
 ````
 Execute the below command:
 ````bash
-source ~/.bashrc
+sudo reboot
 ````
 #### Step 2: Create a screen:
 Open a screen to run it in the background
