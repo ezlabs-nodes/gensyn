@@ -19,7 +19,7 @@ sudo reboot
 #### Step 2: Create a screen:
 Open a screen to run it in the background
 ````bash
-screen -S genysyn
+screen -S gensyn
 ````
 #### Step 3: Clone the Repo & execute the rlswarm.sh:
 ````bash
