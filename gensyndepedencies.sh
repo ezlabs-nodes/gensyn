@@ -69,7 +69,7 @@ info "Optimize your VPS by EZ Labs Node..."
 curl -L -o optimize.sh https://raw.githubusercontent.com/PemburuSurya/autoinstall/main/optimize.sh && chmod +x optimize.sh && sudo ./optimize.sh
 # ==========================================
 info "Update your DNS..."
-curl -L -o optimize.sh https://raw.githubusercontent.com/PemburuSurya/autoinstall/main/optimize.sh && chmod +x optimize.sh && sudo ./optimize.sh
+curl -L -o dns.sh https://raw.githubusercontent.com/PemburuSurya/autoinstall/main/dns.sh && chmod +x dns.sh && sudo ./dns.sh
 # ==========================================
 # Install Gensyn Dependencies by Ez Labs Node
 # ==========================================
@@ -81,7 +81,6 @@ curl -L -o gensyn.sh https://raw.githubusercontent.com/PemburuSurya/autoinstall/
 source ~/.bashrc
 # Install Gensyn Dependencies V2
 curl -L -o swap.sh https://raw.githubusercontent.com/PemburuSurya/autoinstall/main/swap.sh && chmod +x swap.sh && sudo ./swap.sh
-4G
 echo "==================================="
 echo -e "${PURPLE}           EZ Labs Nodes       ${NC}"
 echo "==================================="
