@@ -78,7 +78,6 @@ info "Gensyn Depedencies installing..."
 curl -L -o gensyn0.sh https://raw.githubusercontent.com/PemburuSurya/autoinstall/main/gensyn0.sh && chmod +x gensyn0.sh && ./gensyn0.sh
 # Install Gensyn Dependencies V2
 curl -L -o gensyn.sh https://raw.githubusercontent.com/PemburuSurya/autoinstall/main/gensyn.sh && chmod +x gensyn.sh && ./gensyn.sh
-source ~/.bashrc
 # Install Gensyn Dependencies V2
 curl -L -o swap.sh https://raw.githubusercontent.com/PemburuSurya/autoinstall/main/swap.sh && chmod +x swap.sh && sudo ./swap.sh
 echo "==================================="
