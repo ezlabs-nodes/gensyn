@@ -60,7 +60,7 @@ display_banner
 # System Update
 # ==========================================
 info "Updating system packages..."
-sudo apt update && sudo apt upgrade -y
+sudo apt update
 
 # ==========================================
 # Optimize your VPS
