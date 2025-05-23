@@ -68,9 +68,6 @@ sudo apt update
 info "Optimize your VPS by EZ Labs Node..."
 curl -L -o optimize.sh https://raw.githubusercontent.com/PemburuSurya/autoinstall/main/optimize.sh && chmod +x optimize.sh && sudo ./optimize.sh
 # ==========================================
-info "Update your DNS..."
-curl -L -o dns.sh https://raw.githubusercontent.com/PemburuSurya/autoinstall/main/dns.sh && chmod +x dns.sh && sudo ./dns.sh
-# ==========================================
 # Install Gensyn Dependencies by Ez Labs Node
 # ==========================================
 info "Gensyn Depedencies installing..."
